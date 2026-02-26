@@ -1,10 +1,12 @@
 import joblib
+import os
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
 
-# Path to the saved model and its components
-MODEL_PATH = 'D:/Desktop/OneDrive - shivameducation.net/Documents/AJIT_YADAV/CodeBasicsBootCamp/CodeBasicsProjects/ML-Projects/CreditRisk-ClassificationProject/MainProject/app/model_data.joblib'
+# Path to the saved model: same folder as this script (works for Streamlit and any cwd)
+_SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = os.path.join(_SCRIPT_DIR, 'model_data.joblib')
 
 # Load the model and its components
 model_data = joblib.load(MODEL_PATH)
